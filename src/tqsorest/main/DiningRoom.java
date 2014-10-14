@@ -57,8 +57,8 @@ public class DiningRoom {
 	
 	public boolean pickAClientFromWaitingRoom() {
 		Client c = this.m_waiting_room.serveClient();
-		if (addClient(c))
-			return true;
+		if (c != null)
+			return addClient(c);
 		else return false;
 	}
 	
