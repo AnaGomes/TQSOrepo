@@ -56,7 +56,10 @@ public class DiningRoom {
 	}
 	
 	public boolean pickAClientFromWaitingRoom() {
-		return true;
+		Client c = this.m_waiting_room.serveClient();
+		if (addClient(c))
+			return true;
+		else return false;
 	}
 	
 	public boolean endAClientServiceInWaintingRoom(Client clientToEndService) {
